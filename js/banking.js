@@ -1,3 +1,12 @@
+function getInputValue(){
+    depositInput = document.getElementById('your-deposit-amount');
+    depositInputText = depositInput.value;
+    depositInputTotal = parseFloat(depositInputText);
+    return 
+}
+
+
+
 // deposite button hendel
 document.getElementById('deposit-btn').addEventListener('click', function(){
     depositInput = document.getElementById('your-deposit-amount');
@@ -9,16 +18,16 @@ document.getElementById('deposit-btn').addEventListener('click', function(){
     previousDepositText = previousDeposit.innerText ;
     previousDepositTotal = parseFloat(previousDepositText);
 
-    newDepositAmount = previousDepositTotal + depositInputTotal;
-    previousDeposit.innerText = newDepositAmount;
+    previousDeposit.innerText = previousDepositTotal + depositInputTotal;
+    
 
-    // add total balance
+    // add total balancet
     previousBalance = document.getElementById('total-balance');
     previousBalanceText = previousBalance.innerText;
     previousBalanceTotal = parseFloat(previousBalanceText);
 
-    newBalanceTotal = previousBalanceTotal +  depositInputTotal;
-    previousBalance.innerText = newBalanceTotal;
+    previousBalance.innerText= previousBalanceTotal +  depositInputTotal;
+    
 
 
     // clear input
@@ -38,19 +47,16 @@ document.getElementById('withdraw-btn').addEventListener('click', function(){
     previousWithdrawText = previousWithdraw.innerText;
     previousWithdrawTotal = parseFloat(previousWithdrawText);
 
-    newWithdrawAmount =  previousWithdrawTotal + withdrawInputTotal;
-    previousWithdraw.innerText = newWithdrawAmount;
-
+    previousWithdraw.innerText =  previousWithdrawTotal + withdrawInputTotal;
+    
 
     // balance
     previousBalance = document.getElementById('total-balance');
     previousBalanceText = previousBalance.innerText;
     previousBalanceTotal = parseFloat(previousBalanceText);
 
-    newUpdetBalance = previousBalanceTotal - withdrawInputTotal;
-    previousBalance.innerText = newUpdetBalance; 
-
-
+    previousBalance.innerText = previousBalanceTotal - withdrawInputTotal;
+    
     withdrawInput.value = '';
 
 })
